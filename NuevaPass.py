@@ -7,27 +7,45 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome(PATH)
-driver.get("https://aws.pesaschile.cl/recuperar-contrase%C3%B1a/")
+driver.get("https://aws.pesaschile.cl/iniciar-sesion?back=my-account/")
 time.sleep(5)
 
+
+##-----------------------Inicio de Sesión------------------------------##
 user = driver.find_element_by_name("email")
 user.clear()
 user.send_keys("eupphory@gmail.com")
 
-enviar = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/section/div/button")
-enviar.click()
+password = driver.find_element_by_name("password")
+password.clear()
+password.send_keys("123456")
 
-driver.get("https://aws.pesaschile.cl/recuperar-contraseña?token=369287eb97423228135a570a516b3f59&id_customer=51374&reset_token=3ce1ff8287e6cf9396cb04107c834e2f37c2159d")
+register = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/footer/button")
+register.click()
+time.sleep(4)
 
-password_nueva = driver.find_element_by_name("passwd")
-password_nueva.clear()
-password_nueva.send_keys("contranueva")
+##-----------------------Ingresando a "Mi Cuenta"------------------------------##
+perfil = driver.find_element_by_xpath('/html/body/main/div[2]/header/div[3]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/button').click()
+time.sleep(3)
 
-password_confirmacion = driver.find_element_by_name("confirmation")
-password_confirmacion.clear()
-password_confirmacion.send_keys("contranueva")
+mi_cuenta = driver.find_element_by_xpath('/html/body/main/div[2]/header/div[3]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/ul/li[1]').click()
 time.sleep(5)
 
-enviar2 = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/section/div[1]/div[3]/div[1]/button")
-enviar2.click()
+##-----------------------Accediendo a la información del Perfil------------------------------##
+informacion= driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/section/div[1]/div[1]/a[1]/span').click()
+
+
+##-----------------------Cambiando Contraseñas------------------------------##
+password1 = driver.find_element_by_name("password")
+password1.clear()
+password1.send_keys("123456")
+
+password_nueva = driver.find_element_by_name("new_password")
+password_nueva.clear()
+password_nueva.send_keys("hola789123")
+
+terminos= driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/section/form/div[1]/div[9]/div[1]/span/input').click()
+
+guardar = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/section/form/footer/button")
+guardar.click()
 time.sleep(5)

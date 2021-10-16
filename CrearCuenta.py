@@ -25,7 +25,7 @@ user_lastname.send_keys("zoldyck")
 
 email = driver.find_element_by_name("email")
 email.clear()
-email.send_keys("eupphory@gmail.com")
+email.send_keys("eupphory1@gmail.com")
 
 password = driver.find_element_by_name("password")
 password.clear()
