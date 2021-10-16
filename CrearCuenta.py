@@ -11,10 +11,6 @@ driver = webdriver.Chrome(PATH)
 driver.get("https://aws.pesaschile.cl/iniciar-sesion?create_account=1")
 time.sleep(5)
 
-#tratamiento = driver.find_element_by_name("id_gender")
-#tratamiento.clear()
-#tratamiento.send_keys("Sr.")
-
 user = driver.find_element_by_name("firstname")
 user.clear()
 user.send_keys("seba")
@@ -25,7 +21,7 @@ user_lastname.send_keys("zoldyck")
 
 email = driver.find_element_by_name("email")
 email.clear()
-email.send_keys("eupphory1@gmail.com")
+email.send_keys("eupphory2@gmail.com")
 
 password = driver.find_element_by_name("password")
 password.clear()
