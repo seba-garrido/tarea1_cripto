@@ -19,7 +19,7 @@ password = driver.find_element_by_name("password")
 password.clear()
 password.send_keys("123456")
 
-register = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/footer/button")
-register.click()
+ingresar = driver.find_element_by_xpath("/html/body/main/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form/footer/button")
+ingresar.click()
 
 time.sleep(5)

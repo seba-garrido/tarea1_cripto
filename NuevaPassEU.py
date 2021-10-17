@@ -13,11 +13,11 @@ time.sleep(2)
 ##-----------------------Inicio de Sesión------------------------------##
 user = driver.find_element_by_name("EmailLogin")
 user.clear()
-user.send_keys("edugar41@gmail.com")
+user.send_keys("seba-garrido@hotmail.com")
 
 password = driver.find_element_by_name("PasswordLogin")
 password.clear()
-password.send_keys("hola123456")
+password.send_keys("fabrica1860")
 
 #remember = driver.find_element_by_xpath('/html/body/div[4]/div[1]/div[2]/div[3]/div[1]/form/div[3]/span').click()
 
